@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="A.I powered automated video interview to assess the candidate on various parameters including technical, logical and analytical ability.">
+    <meta name="author" content="video_interview">
+    <title>Video Screening</title> <!-- page scaling-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!--favicon-->
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<meta name="msapplication-TileColor" content="#da532c">
+
+<!-- Meta Tags Main -->
+<meta name='description' content=''/>
+<meta name='title' content='Video Screening'/>
+
+<!-- Google Fonts -->
+<link href='http://fonts.googleapis.com/' rel='dns-prefetch'/>
+<!-- Google CDN -->
+<link href='http://ajax.googleapis.com/' rel='dns-prefetch'/>
+<!-- CDN JS -->
+<link href='http://cdnjs.cloudflare.com/' rel='dns-prefetch'/>
+<!-- Google Analytics -->
+<link href='http://www.google-analytics.com/' rel='dns-prefetch'/>
+
+<!-- DNS Prefetch Ends -->
+
+
+<!-- BEGIN Open Graph tags -->
+<meta content='https://www.hirecream.com/covid-diagnosis-english' property='og:url'/>
+<meta content='Video Screening' property='og:title'/>
+
+<meta content='HireCream - The Cream of Experts' property='og:site_name'/>
+<meta content='' property='og:description'/>
+<!-- END Open Graph tags -->
+
+
+<!-- BEGIN twitter card -->
+<meta content='summary' name='twitter:card'/>
+<meta content='@hirecream' name='twitter:site'/>
+<meta content='https://www.hirecream.com' name='twitter:domain'/>
+
+<meta content='https://www.hirecream.com/covid-diagnosis-english' name='twitter:url'/>
+<meta content='Video Screening' name='twitter:title'/>
+<meta content='' name='twitter:description'/>
+
+<!-- END twitter card -->
+
+
+<link href='https://www.hirecream.com/covid-diagnosis-english' rel='canonical'/>
+<meta charset='utf-8'/>
+
+<!-- Remove the tag below if support for older IE versions has to be dropped -->
+<meta content='IE=9; IE=8; IE=7; IE=EDGE; chrome=1' http-equiv='X-UA-Compatible'/>
+<meta content='dZPKuYVYMgFogZA-eVXyKw_11wj1b-To1y8v4h3qh6I' name='google-site-verification'/>
+<meta content='#2a41e8' name='theme-color'/>
+
+<meta content='en' http-equiv='content-language'/>
+
+
+
+
+<!-- Google Analytics. Remove the comments when the website goes live -->
+
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136119415-1"></script>-->
+<!--<script>-->
+<!--window.dataLayer = window.dataLayer || [];-->
+<!--function gtag(){dataLayer.push(arguments);}-->
+<!--gtag('js', new Date());-->
+
+<!--gtag('config', 'UA-136119415-1');-->
+<!--</script>-->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+    <link href="../d1fxj45sgc9t4v.cloudfront.net/ai_process/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../d1fxj45sgc9t4v.cloudfront.net/ai_process/css/menu.css" rel="stylesheet">
+    <link href="../d1fxj45sgc9t4v.cloudfront.net/ai_process/css/style.css" rel="stylesheet">
+    <link href="../d1fxj45sgc9t4v.cloudfront.net/ai_process/css/vendors.css" rel="stylesheet">
+    <link rel="stylesheet" href="../d1fxj45sgc9t4v.cloudfront.net/ai_process/css/interview_clock.css">
+    <link href="../d1fxj45sgc9t4v.cloudfront.net/ai_process/css/custom.css" rel="stylesheet">
+    <script src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/js/modernizr.js"></script>
+</head>
+
+<body>
+<div id="preloader">
+    <div data-loader="circle-side"></div>
+</div>
+<div id="loader_form">
+    <div data-loader="circle-side-2"></div>
+</div>
+<style>
+    #container-cam {
+        margin: 0 auto;
+        width: 524px;
+        height: 400px
+    }
+
+    #videoElement {
+        width: 524px;
+        height: 400px;
+        background-color: #666
+    }
+
+    #overlay {
+        width: 524px;
+        height: 400px
+    }
+</style>
+<div class="container-fluid full-height" id="hide_final">
+    <div class="row row-height">
+        <div class="col-lg-4 content-left" style="background-color:#000">
+            <div class="your-clock"></div>
+            <div class="row">
+                <div align="center">
+                    <video autoplay="true" width="95%" height="100%" id="ques_screen">
+                        <source id="ques_screen_src" src="https://d1fxj45sgc9t4v.cloudfront.net/uncle_jon/media/intro.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <br>
+                <div>
+                    <div id="container-cam" style="position:relative" align="center"><img src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/extra_graphics/camera_missing.png" width="75%" id="camera_missing" hidden>
+                        <video onloadedmetadata="draw_detection(this)" autoplay="true" id="videoElement"></video>
+                        <canvas id="overlay" style="position:absolute;top:0;left:0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 content-right" id="start">
+            <div id="wizard_container">
+                <div id="top-wizard">
+                    <div id="progressbar"></div>
+                </div>
+                <form id="wrapped_new" action="https://www.unclejon.xyz/welcome-interview-english" method="post">
+                    <input id="website" name="website" type="text" value="">
+                    <div id="middle-wizard">
+                        <div class="step">
+                            <h3 class="main_question"><strong>1/7</strong>Please fill with your details</h3>
+                            <div class="form-group">
+                                <input type="text" name="first_name" class="form-control required" placeholder="First Name*" onchange="0<$(this).val().length?update_f(!0):update_f(!1)">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="lastname" class="form-control" required placeholder="Last Name*">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" required placeholder="Your Email*">
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input type="text" name="age" class="form-control" required placeholder="Age*">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input type="text" name="weight" class="form-control" placeholder="Weight (Kgs)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group radio_input">
+                                        <label class="container_radio">Male
+                                            <input type="radio" name="gender" value="Male"> <span class="checkmark"></span></label>
+                                        <label class="container_radio">Female
+                                            <input type="radio" name="gender" value="Female"> <span class="checkmark"></span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h3 class="main_question"><strong>2/7</strong>Have you been to any crowded place in the last few days?</h3>
+                            <div class="form-group">
+                                <label class="container_radio version_2">Yes
+                                    <input type="radio" name="question_2" value="Yes" class="required" onclick="if (navigator.geolocation) {navigator.geolocation.getCurrentPosition(showPosition); } function showPosition(position) { document.getElementById(`additional_loc`).innerHTML = `Latitude: `+ position.coords.latitude + `, and Longitude: ` + position.coords.longitude; }" onchange='getVals(this,"question_2"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                            <div class="form-group">
+                                <label class="container_radio version_2">No
+                                    <input type="radio" name="question_2" value="No" class="required" onchange='getVals(this,"question_2"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                            <div class="form-group">
+                                <label class="container_radio version_2">Not Sure
+                                    <input type="radio" name="question_2" value="Not Sure" class="required" onchange='getVals(this,"question_2"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                            <div class="form-group">
+                                <label>In yes, please specify the location</label>
+                                <textarea name="additional_message" id="additional_loc" class="form-control" style="height:100px" placeholder="Type here..." onkeyup='getVals(this,"additional_message")'></textarea>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h3 class="main_question"><strong>3/7</strong>Have you had any travel history or contact with anyone with confirmed COVID-19 in the last 14 days?</h3>
+                            <div class="form-group">
+                                <label class="container_radio version_2">Yes
+                                    <input type="radio" name="question_3" value="Yes" class="required" onchange='getVals(this,"question_3"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                            <div class="form-group">
+                                <label class="container_radio version_2">No
+                                    <input type="radio" name="question_3" value="No" class="required" onchange='getVals(this,"question_3"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h3 class="main_question"><strong>4/7</strong>Please select the symptoms you are facing:</h3>
+                            <div class="form-group">
+                                <label class="container_check version_2">Difficulty while breathing
+                                    <input type="checkbox" name="question_4" value="Difficulty while breathing" class="required" onchange='getVals(this,"question_4"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                            <div class="form-group">
+                                <label class="container_check version_2">Headache
+                                    <input type="checkbox" name="question_4" value="Headache" class="required" onchange='getVals(this,"question_4"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                            <div class="form-group">
+                                <label class="container_check version_2">Pain in your chest
+                                    <input type="checkbox" name="question_4" value="Pain in your chest" class="required" onchange='getVals(this,"question_4"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                            <div class="form-group">
+                                <label class="container_check version_2">Cough
+                                    <input type="checkbox" name="question_4" value="Cough" class="required" onchange='getVals(this,"question_4"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                            <div class="form-group">
+                                <label class="container_check version_2">Fever
+                                    <input type="checkbox" name="question_4" value="Fever" class="required" onchange='getVals(this,"question_4"),update_f(!0)'> <span class="checkmark"></span></label>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h3 class="main_question"><strong>5/7</strong>Please cough into the microphone</h3>
+                            <div class="form-group margin-top-40"><img width="75%" src="images/new/cough.gif"></div>
+                        </div>
+                        <div class="step">
+                            <h3 class="main_question"><strong>6/7</strong>How are you feeling right now?</h3>
+                            <div class="form-group">
+                                <textarea name="additional_feeling" id="feeling" class="form-control" style="height:200px" placeholder="Type here..." onkeyup='getVals(this,"question_6"),update_f(!0)' required></textarea>
+                            </div>
+                        </div>
+                        <div class="submit step">
+                            <h3 class="main_question"><strong>7/7</strong>Summary</h3>
+                            <div class="summary">
+                                <ul>
+                                    <li><strong>1</strong>
+                                        <h5>Have you been to any crowded place in the last few days?</h5>
+                                        <p id="question_2"></p>
+                                    </li>
+                                    <li><strong>2</strong>
+                                        <h5>Have you had any travel history or contact with anyone with confirmed COVID-19 in the last 14 days?</h5>
+                                        <p id="question_3"></p>
+                                    </li>
+                                    <li><strong>3</strong>
+                                        <h5>Please select the symptoms you are facing:</h5>
+                                        <p id="question_4"></p>
+                                    </li>
+                                    <li><strong>4</strong>
+                                        <h5>How are you feeling right now?</h5>
+                                        <p id="question_6"></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bottom-wizard">
+                        <button type="button" name="backward" class="backward" id="click_prev">Prev</button>
+                        <button type="button" name="forward" class="forward" id="click_next">Next</button>
+                        <button type="submit" name="process" class="submit" id="submit_final">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid full-height" id="final_display" hidden>
+    <div class="row row-height" style="height:100vh">
+        <div class="col-lg-12 content-left">
+            <div class="content-left-wrapper">
+                <div>
+                    <figure><img src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/extra_graphics/check_final.png" width="30%" alt="" class="img-fluid"></figure>
+                    <h2>Your Interview Score is: <span id="interview_score">30</span></h2>
+                    <p style="font-size:1.3rem">Confidence Level: <span id="confidence_level">Good</span>
+                        <br>Correct Answers: <span id="correct_ans">5</span>
+                        <br>Wrong Answers: <span id="wrong_ans">3</span>
+                        <br>Time Taken: <span id="time_taken">70</span></p><a href="error.html" class="btn_1 rounded">Interview Again →</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/js/jquery-3.2.1.min.js"></script>
+<script src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/js/common_scripts.min.js"></script>
+<script src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/js/velocity.min.js"></script>
+<script src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/js/functions.js"></script>
+<script src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/js/survey_func.js"></script>
+<script src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/js/interview_clock.min.js"></script>
+<script>
+    var clock = $(".your-clock").FlipClock({})
+</script>
+<script src="../d1fxj45sgc9t4v.cloudfront.net/ai_process/tensor_cnn/tensor_cnn.js"></script>
+<script>
+    $.ajax({
+        type: "POST",
+        url: "/video-interview-start",
+        data: {
+            src_covid: !0
+        },
+        success: function(e) {
+            $.getScript("new_files/tensor_play_e.js")
+        }
+    })
+</script>
+</body>
+
+
+</html>
